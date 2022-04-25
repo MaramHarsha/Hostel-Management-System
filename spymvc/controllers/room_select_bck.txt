@@ -1,0 +1,100 @@
+// controller code
+
+if($_POST['ten_room'] != '')
+{
+    $this->form_validation->set_rules('lease_from', 'Lease From Date', 'required');
+    $this->form_validation->set_rules('lease_to', 'Lease To Date', 'required|callback_compareDate');
+    $this->form_validation->set_rules('ten_bed', 'Bed', 'required');
+    $this->form_validation->set_rules('ten_deposite_amnt', 'Deposite Amount', 'required|numeric');
+    $this->form_validation->set_rules('ten_rent', 'Rent Amount', 'required|numeric');
+}
+
+
+// view code
+
+<hr/>
+				<h4>Room Details:</h4>
+				<hr/>
+
+
+				<div class="form-group roomselectionform">
+                  <label for="tenantroom" class="col-sm-1 control-label">Room</label>
+
+                  <div class="col-sm-5">
+                    <select class="form-control roomselect" id="tenantroom" name="ten_room">
+                      <optgroup class='def-cursor' label='Room' data-totalbeds='Total Beds' data-availablebeds='Available Beds' data-baseprice='Base Price'>
+                      <option value="" data-totalbeds='' data-availablebeds='' data-baseprice=''>--Select Room--</option>
+                      <?php 
+                      foreach($allrooms as $room)
+                      {
+                      ?>
+                        <option data-totalbeds="<?php echo $room['allbeds']; ?>" data-availablebeds="<?php echo $room['avlbeds']; ?>" data-baseprice="<?php echo $options['currency_symbol']; ?> <?php echo $room['room_price']; ?>" value="<?php echo $room['id']; ?>" <?php if($room['avlbeds']<1) echo'disabled'; ?>><?php echo $room['room_name']; ?></option>
+                      <?php
+                      }
+                      ?>
+                    </select>
+                  </div>
+
+				  <label for="tenantbed" class="col-sm-1 control-label">Bed</label>
+
+                  <div class="col-sm-5">
+                    <select class="form-control smartselect" id="tenantbed" name="ten_bed">
+                      <option value="">-- Select Bed --</option>
+                    </select>
+                    <?php echo form_error('ten_bed', '<div class="alert alert-danger alert-dismissible alertsm">', '</div>'); ?>
+                  </div>
+                </div>
+
+				<div class="form-group">
+
+				  <label for="tenantdeposite" class="col-sm-1 control-label">Deposite</label>
+
+          <div class="col-sm-3">
+            <div class="input-group">
+              <span class="input-group-addon"><?php echo $options['currency_symbol']; ?></span>
+              <input type="text" class="form-control" id="tenantdeposite" name="ten_deposite_amnt" placeholder="0.00" value="<?php echo ($tenuid == 0) ? set_value('ten_deposite_amnt') : $tendata['ten_deposite_amnt']; ?>">
+            </div>
+            <?php echo form_error('ten_deposite_amnt', '<div class="alert alert-danger alert-dismissible alertsm">', '</div>'); ?>
+          </div>
+
+				  <label for="tenantrent" class="col-sm-1 control-label">Rent</label>
+
+          <div class="col-sm-3">
+            <div class="input-group">
+              <span class="input-group-addon"><?php echo $options['currency_symbol']; ?></span>
+              <input type="text" class="form-control" id="tenantrent" name="ten_rent" placeholder="0.00" value="<?php echo ($tenuid == 0) ? set_value('ten_rent') : $tendata['ten_rent']; ?>">
+              <span class="input-group-addon" id="rent_period_for_rent">/Month</span>
+            </div>
+            <?php echo form_error('ten_rent', '<div class="alert alert-danger alert-dismissible alertsm">', '</div>'); ?>
+          </div>
+
+          <label for="roomformonths" class="col-sm-1 control-label">Period</label>
+
+            <div class="col-sm-3">
+              <select class="form-control" id="rent_period" name="rent_period">
+                  <option value="monthly">Monthly</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="yearly">Yearly</option>
+              </select>
+            </div>
+
+        </div>
+
+          <div class="form-group">
+            <label for="tenantroom" class="col-sm-1 control-label">Lease From</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control datepicker" id="lease_from" name="lease_from" placeholder="Lease From Date" value="<?php echo ($tenuid == 0) ? set_value('lease_from') : $tendata['lease_from']; ?>">
+              <?php echo form_error('lease_from', '<div class="alert alert-danger alert-dismissible alertsm">', '</div>'); ?>
+            </div>
+
+				    <label for="tenantbed" class="col-sm-1 control-label">Lease To</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control datepicker" id="lease_to" name="lease_to" placeholder="Lease To Date" value="<?php echo ($tenuid == 0) ? set_value('lease_to') : $tendata['lease_to']; ?>">
+              <?php echo form_error('lease_to', '<div class="alert alert-danger alert-dismissible alertsm">', '</div>'); ?>
+            </div>
+          </div>
+
+
+// JS code
+

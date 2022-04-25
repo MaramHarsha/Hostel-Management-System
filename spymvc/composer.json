@@ -1,0 +1,5 @@
+{
+    "require": {
+        "studio-42/elfinder": "^2.1"
+    }
+}

@@ -1,0 +1,112 @@
+
+.memlistimg {
+  width: 100%
+}
+
+.malecolor {
+	color: #0000ff;
+    font-size: 2em;
+}
+
+.femalecolor {
+	color: #ff007f;
+    font-size: 2em;
+}
+
+hr.vertical
+{
+   width: 0px;
+   height: 100%; /* or height in PX */
+}
+
+.loginbgcol1{
+	height:100vh;
+	overflow: hidden;
+}
+
+.loginbgcol2{
+	
+	height:100vh;
+	background-color: #E9ECEF;
+}
+
+.alertsm{
+	padding: 2px;
+	margin-bottom: 10px
+}
+
+.text_center{
+	text-align:center
+  }
+  
+  .text_right{
+	text-align:right;
+  }
+  
+  .width20{
+	width:20%
+  }
+  
+  .width50{
+	width:50%
+  }
+  
+  .width100{
+	width:100%
+  }
+  
+  .floatright{
+	float: right;
+  }
+  
+  .display_none{
+	display:none;
+  }
+  
+  .tenantprofile{
+	min-height: 1135.8px;
+  }
+  
+  .appname{
+	line-height: 30px; padding-right: 10px;
+  }
+
+  .row { margin: 0; padding: 0 }
+
+  .login-box { width: 100%; }
+  
+  .form-group{
+    margin-bottom: 1rem;
+  }
+
+  .loginbg{
+    width: 100%;
+  }
+
+  .ten_report_frame{
+    width: 100%;
+  }
+
+  .gc_search_colums_select{
+    height: 27px;
+  }
+  
+  .flexigrid div.btnseparator{
+    height: 27px;
+  }
+
+  .gc_action_icon{
+    cursor: pointer;
+    width: 16px;
+    height:16px;
+    float:right;
+    border: none !important;
+    padding:0px !important;
+    padding-bottom:0px !important;
+    margin-left:5px;
+    display: block;
+  }
+
+  .text-white{
+    color: white;
+  }

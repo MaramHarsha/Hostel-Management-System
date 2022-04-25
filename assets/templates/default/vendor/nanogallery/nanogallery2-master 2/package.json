@@ -1,0 +1,39 @@
+{
+  "name": "nanogallery2",
+  "description": "modern photo / video gallery and lightbox",
+  "author": {
+    "name" : "Christophe Brisbois",
+    "email" : "chr@brisbois.fr",
+    "url" : "https://brisbois.fr"
+  },
+  "version": "3.0.2",
+  "homepage": "https://nanogallery2.nanostudio.org",
+  "keywords": "image photo video gallery galleries lightbox album",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nanostudio-org/nanogallery2.git"
+  },
+  "bugs" : {
+    "url" : "https://github.com/nanostudio-org/nanogallery2/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.13",
+    "grunt-codepainter": "latest",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-qunit": "latest",
+    "grunt-terser": "latest",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-gh-pages": "latest",
+    "grunt-banner": "latest",
+    "grunt-header": "latest"
+  },
+  "scripts": {
+    "test": "grunt build-nanogallery2"
+  },
+  "dependencies": {
+    "jquery": ">=1.12.4"
+  }
+}
