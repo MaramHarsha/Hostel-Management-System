@@ -26,3 +26,5 @@ JKLU HMS Features:
 - Income Reports
 - Expense Reports
 - Complaints Management
+# Future Scopes
+Layout for hostel and for floors.
